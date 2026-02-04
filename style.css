@@ -1,23 +1,21 @@
 body{
     margin: 0;
-    font-family: Arial;
-    background: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #f5f7fa);
 }
 
 /* NAVBAR */
 
 .navbar{
-    background: #333;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: linear-gradient(90deg, #1f1f1f, #3a3a3a);
+    padding: 18px 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
 .logo{
     font-size: 22px;
     font-weight: bold;
+    color:#f5f7fa
 }
 
 /* MENU LATERAL */
@@ -110,21 +108,31 @@ body{
 .container{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
+    gap: 15px;
+    padding: 25px;
 }
 
 /* BOTÕES */
+button{
+    padding: 12px 22px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    background: #dcdcdc;
+    transition: 0.25s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
 
 button{
-    padding: 15px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    background: #ccc;
-    transition: 0.3s;
+    transition: 0.3s, transform 0.2s;
 }
+
+button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
 
 /* CORES */
 
@@ -138,11 +146,11 @@ button{
 /* LEGENDA */
 
 .legenda{
-    display: flex;
-    gap: 20px;
-    padding: 15px 20px;
+    margin: 20px;
     background: white;
-    flex-wrap: wrap;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .item{
@@ -160,4 +168,30 @@ button{
 
 .legenda{
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* CRONÔMETRO */
+
+.cronometro{
+    background: white;
+    padding: 30px;
+    margin: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.cronometro h2{
+    font-size: 55px;
+    font-weight: 700;
+    color: #222;
+}
+
+.botoes-crono button{
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
 }

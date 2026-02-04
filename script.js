@@ -11,8 +11,7 @@ function toggleMenu(){
 /* BOTÕES */
 
 const nomes = [
-"Felipe","Otto","Pam","Panda bugado","Cajoma","Lucca","","Repolho","","","","Buzz","","Fred","","","","Senac","","","","","Pablo","","","","","Mateus","","","","Carlinhos","","","","","Tom Hanks",
-];
+"Anunciada","Carlos","Djanira","Éder","Eduardo","Edison","Eliana","Emerson","Espéria","Fernando","Iara","José","Julio","Layla","Leandro","Lucca","Lucimara","Mara","Marina","Néia","Nilson","Ondina","Otto","Paulo","Raquel Silva","Raquel Barion","Roque","Renan","Sidney","Silvana","Thiago","Vinni"];
 
 const container = document.getElementById("container");
 
@@ -43,3 +42,50 @@ nomes.forEach(nome => {
     container.appendChild(botao);
 
 });
+
+/* CRONÔMETRO */
+
+let segundos = 0;
+let minutos = 0;
+let horas = 0;
+let intervalo = null;
+
+function atualizarTempo(){
+
+    segundos++;
+
+    if(segundos === 60){
+        segundos = 0;
+        minutos++;
+    }
+
+    if(minutos === 60){
+        minutos = 0;
+        horas++;
+    }
+
+    document.getElementById("tempo").textContent =
+        String(horas).padStart(2,'0') + ":" +
+        String(minutos).padStart(2,'0') + ":" +
+        String(segundos).padStart(2,'0');
+}
+
+function iniciar(){
+    if(!intervalo){
+        intervalo = setInterval(atualizarTempo,1000);
+    }
+}
+
+function pausar(){
+    clearInterval(intervalo);
+    intervalo = null;
+}
+
+function resetar(){
+    pausar();
+    segundos = 0;
+    minutos = 0;
+    horas = 0;
+
+    document.getElementById("tempo").textContent = "00:00:00";
+}
